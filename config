@@ -1,0 +1,36 @@
+general {
+    colors = true
+    interval = 5
+}
+
+order += "cpu_usage"
+order += "memory"
+order += "cpu_temperature 0"
+order += "tztime local"
+order += "volume master"
+
+cpu_usage {
+    format = " CPU: %usage "
+}
+
+memory {
+    # Shows RAM as "Used / Total" (e.g., 1.2G / 3.7G)
+    format = " RAM: %used / %total "
+}
+
+cpu_temperature 0 {
+    format = " %degrees °C "
+    path = "/sys/class/thermal/thermal_zone0/temp"
+}
+
+tztime local {
+    format = " %I:%M %p "
+}
+
+volume master {
+    format = " VOL: %volume "       # This shows the white numbers
+    format_muted = " VOL: MUTED "    # This shows when you hit the mute key
+    device = "default"
+    mixer = "Master"
+    mixer_idx = 0
+}
