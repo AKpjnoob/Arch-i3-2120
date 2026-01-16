@@ -1,3 +1,8 @@
+![Arch Linux](https://img.shields.io/badge/Arch%20Linux-1793D1?logo=arch-linux&logoColor=white)
+![i3wm](https://img.shields.io/badge/i3wm-black?logo=i3&logoColor=white)
+![Sublime Text](https://img.shields.io/badge/Sublime%20Text-FF9800?logo=sublime-text&logoColor=white)
+![VLC](https://img.shields.io/badge/VLC-FF8800?logo=vlc&logoColor=white)
+
 # Arch Linux i3wm Rice (i3-2120 Build)
 
 This repository contains my personal configuration files for a lightweight, "Full Dark" development environment on Arch Linux.
