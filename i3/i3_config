@@ -22,9 +22,11 @@ font pango:monospace 8
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
-exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/wallhaven1.png
+exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/wallhaven4.png
 # Start picom in the background using the xrender backend for stability
-exec_always --no-startup-id picom -b --backend xrender
+#exec_always --no-startup-id picom -b --backend xrender
+#new compositor alternative for picom fastcompmgr
+exec --no-startup-id fastcompmgr -c -C -o 0
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -43,6 +45,8 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% 
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle 
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+# Launch Gemini CLI in Alacritty with the Super+G shortcut
+bindsym $mod+g exec --no-startup-id alacritty -e /home/akash/Documents/Github/Arch-i3-2120/scripts/launch_gemini.sh
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -224,3 +228,4 @@ bindsym Print exec --no-startup-id flameshot gui
 
 # Select an area and copy it directly to your clipboard
 bindsym $mod+Print exec --no-startup-id maim -s | xclip -selection clipboard -t image/png
+for_window [instance="gemini.google.com"] floating enable, resize set 800 600
