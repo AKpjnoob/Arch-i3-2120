@@ -14,22 +14,24 @@ This repository contains my personal configuration files for a lightweight, "Ful
 - **Monitor:** Dell S2240L (1080p)
 
 ## 🛠️ Software Stack
-- **WM:** i3-gaps / i3wm
+- **WM:** i3wm
 - **Terminal:** Alacritty (Opacity 0.9)
-- **Bar:** i3status (Large Text / JetBrains Mono)
-- **Compositor:** Picom (xrender backend for stability)
+- **Bar:** i3status (Optimized for Sandy Bridge Thermal Monitoring)
+- **Compositor:** Picom / fastcompmgr (for faster rendering on old PCs)
 - **File Manager:** PCManFM / Superfile
 - **Theme:** Materia-Dark / Papirus-Dark
-* **Editor:** Sublime Text 4 (Font: JetBrains Mono)
+- **Editor:** Sublime Text 4 (Font: JetBrains Mono)
 
 ## 📁 Repository Structure
-- `/i3`: Main window manager and status bar logic.
+- `/i3`: Main window manager and status bar logic (includes hardware temperature fix).
 - `/picom`: Visual effects and transparency rules.
+- `/fastcompmgr`: Configuration for low-resource rendering.
 - `/sublime-text`: UI and font preferences for development.
 
 ## 🚀 Key Features
-- **Efficiency:** Tailored for 2nd Gen Intel hardware (i3-2120) with 4GB RAM.
-- **Workflow:** Optimized for Angular/Python Full Stack development.
+- **Efficiency:** Tailored for 2nd Gen Intel hardware with 4GB RAM.
+- **Hardware Monitoring:** Real-time CPU temperature tracking via `hwmon`.
+- **Workflow:** Optimized for Python Full Stack development.
 - **Visuals:** Clean, transparent aesthetic using TokyoNight themes.
 
 ## 📝 License
