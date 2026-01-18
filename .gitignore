@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.py[cod]
+*.class
+
+# System
+.DS_Store
+thumbs.db
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
