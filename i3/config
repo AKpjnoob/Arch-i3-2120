@@ -16,10 +16,10 @@ set $mod Mod4
 font pango:monospace 8
 # --- WINDOW BORDER COLORS (TOKYO NIGHT DARK) ---
 # class                 border    backgr.   text    indicator child_border
-client.focused          #7aa2f7   #7aa2f7   #ffffff #2e9ef4   #7aa2f7
-client.focused_inactive #24283b   #24283b   #aaaaaa #484e81   #24283b
-client.unfocused        #1a1b26   #1a1b26   #888888 #292e42   #1a1b26
-client.urgent           #f7768e   #f7768e   #ffffff #900000   #f7768e
+client.focused          #7aa2f7CC   #7aa2f7CC   #ffffff #2e9ef4   #7aa2f7CC
+client.focused_inactive #24283bCC   #24283bCC   #aaaaaa #484e81   #24283bCC
+client.unfocused        #1a1b26CC   #1a1b26CC   #888888 #292e42   #1a1b26CC
+client.urgent           #f7768eCC   #f7768eCC   #ffffff #900000   #f7768eCC
 client.placeholder      #000000   #0c0c0c   #ffffff #000000   #0c0c0c
 
 client.background       #1a1b26
@@ -37,7 +37,7 @@ smart_borders on
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
-exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/wallhaven4.png
+exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/wallhaven3.png
 # Start picom in the background using the xrender backend for stability
 #exec_always --no-startup-id picom -b --backend xrender
 #new compositor alternative for picom fastcompmgr
@@ -47,7 +47,7 @@ exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/wallhaven4.png
 # -r 1: Sharp shadow (1 pixel blur only)
 # -o 0.2: Very light opacity (low GPU impact)
 # -l -2 -t -2: Tight offset (shadow stays close to window)
-exec --no-startup-id fastcompmgr -c -C -r 1 -o 0.2 -l -2 -t -2
+exec_always --no-startup-id fastcompmgr -c -C -r 1 -o 0.2 -l -2 -t -2
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -66,8 +66,6 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% 
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle 
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-# Launch Gemini CLI in Alacritty with the Super+G shortcut
-bindsym $mod+g exec --no-startup-id alacritty -e /home/akash/Documents/Github/Arch-i3-2120/scripts/launch_gemini.sh
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -223,9 +221,12 @@ bar {
     
     # Setting font size to 14 makes the numbers very easy to see on 1080p
     font pango:JetBrains Mono Bold 10
+    # The last two digits 'CC' set the transparency (roughly 80%)
+    # #00000000 is fully transparent, #000000FF is solid black
+    i3bar_command i3bar --transparency
 
     colors {
-        background #000000     # Pure Black
+        background #000000CC     # Pure Black
         statusline #ffffff     # White text for numbers
         separator  #444444
 
