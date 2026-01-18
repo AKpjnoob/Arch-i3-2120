@@ -25,6 +25,7 @@ This repository contains my personal configuration files for a lightweight, "Ful
 ## 📁 Repository Structure
 - `/i3`: Main window manager and status bar logic.
 - `/picom`: Visual effects and transparency rules.
+- `/fastcompmgr`:for faster rendering on old sandy bridge pc's
 - `/sublime-text`: UI and font preferences for development.
 
 ## 🚀 Key Features
