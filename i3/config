@@ -216,6 +216,8 @@ bindsym $mod+r mode "resize"
 # --- AKASH'S BIG DARK TOP BAR ---
 bar {
     status_command i3status
+    # Change this line to use your new script
+    status_command ~/.local/bin/my_bar.sh
     position top               # Moves it to the top
     mode dock
     
